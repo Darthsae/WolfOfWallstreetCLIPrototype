@@ -5,14 +5,10 @@
             "name": "x64",
             "displayName": "Visual Studio Community 2022 Release - amd64",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
-            "generator": "Ninja",
+            "generator": "Ninja Multi-Config",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe"
-            }
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "installDir": "${sourceDir}/out/install/${presetName}"
         }
     ],
     "buildPresets": [

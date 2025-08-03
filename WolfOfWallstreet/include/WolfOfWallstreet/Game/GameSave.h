@@ -13,6 +13,7 @@ namespace WolfOfWallstreet::Game {
     struct GameSave {
     public:
         GameSaveProfile profile;
+        World world;
     };
 
     struct GameSaveProfile {
