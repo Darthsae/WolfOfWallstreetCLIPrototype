@@ -2,26 +2,76 @@
     "version": 8,
     "configurePresets": [
         {
+            "name": "general",
+            "displayName": "General",
+            "description": "Using auto found compilers.",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "installDir": "${sourceDir}/out/install/${presetName}"
+        },
+        {
             "name": "x64",
             "displayName": "Visual Studio Community 2022 Release - amd64",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
             "generator": "Ninja Multi-Config",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
-            "installDir": "${sourceDir}/out/install/${presetName}"
+            "installDir": "${sourceDir}/out/install/${presetName}",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe"
+            }
+        },
+        {
+            "name": "linux-x64",
+            "displayName": "Ubuntu - x64",
+            "description": "Using compilers for GCC on Ubuntu",
+            "generator": "Ninja Multi-Config",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "toolchainFile": "${sourceDir}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+            "installDir": "${sourceDir}/out/install/${presetName}",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
         }
     ],
     "buildPresets": [
         {
+            "name": "general-debug",
+            "displayName": "General - x64 - Debug",
+            "configurePreset": "general",
+            "configuration": "Debug"
+        },
+        {
+            "name": "general-release",
+            "displayName": "General - x64 - Release",
+            "configurePreset": "general",
+            "configuration": "Release"
+        },
+        {
             "name": "x64-debug",
-            "displayName": "VSC2022 Release - amd64 - Debug",
+            "displayName": "VSC2022R - x64 - Debug",
             "configurePreset": "x64",
             "configuration": "Debug"
         },
         {
             "name": "x64-release",
-            "displayName": "VSC2022 Release - amd64 - Release",
+            "displayName": "VSC2022R - x64 - Release",
             "configurePreset": "x64",
+            "configuration": "Release"
+        },
+        {
+            "name": "linux-x64-debug",
+            "displayName": "Ubuntu - x64 - Debug",
+            "configurePreset": "linux-x64",
+            "configuration": "Debug"
+        },
+        {
+            "name": "linux-x64-release",
+            "displayName": "Ubuntu - x64 - Release",
+            "configurePreset": "linux-x64",
             "configuration": "Release"
         }
     ]
