@@ -12,7 +12,7 @@
         },
         {
             "name": "x64",
-            "displayName": "Visual Studio Community 2022 Release - amd64",
+            "displayName": "VSC2022R - x64",
             "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
             "generator": "Ninja Multi-Config",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
