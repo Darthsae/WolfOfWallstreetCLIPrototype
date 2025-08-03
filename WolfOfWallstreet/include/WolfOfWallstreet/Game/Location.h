@@ -1,7 +1,7 @@
 #pragma once
 #ifndef LOCATION_H
 #define LOCATION_H
-namespace WolfOfWallstreet::World {
+namespace WolfOfWallstreet::Game {
     
 }
 #endif

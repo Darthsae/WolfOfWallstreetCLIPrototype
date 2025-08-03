@@ -1,7 +1,7 @@
 #pragma once
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
-namespace WolfOfWallstreet::World::Language {
+namespace WolfOfWallstreet::Game::Language {
     
 }
 #endif
