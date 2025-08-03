@@ -25,6 +25,8 @@ namespace WolfOfWallstreet::Game::Data {
         bool SSNSetAreaCode(social_security_number&, uint32_t);
         bool SSNSetGroupCode(social_security_number&, uint32_t);
         bool SSNSetSerialCode(social_security_number&, uint32_t);
+
+        std::string SSNFormat(const social_security_number* const);
     }
 }
 #endif

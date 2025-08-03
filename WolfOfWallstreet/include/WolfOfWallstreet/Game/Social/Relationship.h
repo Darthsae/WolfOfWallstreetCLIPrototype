@@ -6,12 +6,14 @@ namespace WolfOfWallstreet::Game::Social {
     struct IRelationType;
 }
 
+#include <WolfOfWallstreet/Game/Data/SocialSecurityNumber.h>
 #include <WolfOfWallstreet/Game/Person.h>
 #include <memory>
 #include <stdint.h>
 #include <string>
 
 using WolfOfWallstreet::Game::Person;
+using WolfOfWallstreet::Game::Data::social_security_number;
 
 namespace WolfOfWallstreet::Game::Social {
     struct IRelationType {
@@ -33,6 +35,7 @@ namespace WolfOfWallstreet::Game::Social {
     public:
         std::unique_ptr<IRelationType> relationType;
         int32_t strength = 0;
+        social_security_number person;
 
         std::string Debug(void);
     };

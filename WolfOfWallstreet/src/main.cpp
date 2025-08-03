@@ -9,9 +9,10 @@ int main(int argc, char const **) {
     for (int i = 0; i < 2; i++) {
         for (int j = -3; j < 4; j++) {
             WolfOfWallstreet::Game::Social::Relationship relation = {};
+            relation.person = 0b00000001000110010000000100110001;
             relation.relationType = std::make_unique<WolfOfWallstreet::Game::Social::FamilyRelation>(WolfOfWallstreet::Game::Social::FamilyRelation(i, j, i % 2 == 0));
             WolfOfWallstreet::Game::Social::FamilyRelation* ap = dynamic_cast<WolfOfWallstreet::Game::Social::FamilyRelation*>(relation.relationType.get());
-            std::println("i: {} j: {} relation: ({})", i, j, relation.Debug());
+            std::println("relation: ({})", relation.Debug());
         }
     }
     return 0;

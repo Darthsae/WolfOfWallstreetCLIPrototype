@@ -1,4 +1,5 @@
 #include <WolfOfWallstreet/Game/Data/SocialSecurityNumber.h>
+#include <format>
 
 using namespace WolfOfWallstreet::Game::Data;
 
@@ -36,4 +37,8 @@ bool SocialSecurityNumber::SSNSetSerialCode(social_security_number& a_socialSecu
         return true;
     }
     return false;
+}
+
+std::string SocialSecurityNumber::SSNFormat(const social_security_number* const a_socialSecurityNumber) {
+    return std::format("{:03d}-{:02d}-{:04d}", SocialSecurityNumber::SSNGetAreaCode(a_socialSecurityNumber), SocialSecurityNumber::SSNGetGroupCode(a_socialSecurityNumber), SocialSecurityNumber::SSNGetSerialCode(a_socialSecurityNumber));
 }

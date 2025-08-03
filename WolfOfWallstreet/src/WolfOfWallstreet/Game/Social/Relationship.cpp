@@ -2,6 +2,7 @@
 #include <format>
 #include <print>
 
+using namespace WolfOfWallstreet::Game::Data;
 using namespace WolfOfWallstreet::Game::Social;
 
 FamilyRelation::FamilyRelation(int32_t a_directness, int32_t a_generation, bool a_biological) {
@@ -45,5 +46,5 @@ std::string FamilyRelation::Debug(void) {
 }
 
 std::string Relationship::Debug(void) {
-    return std::format("({}): {}", this->relationType->Debug(), this->strength);
+    return std::format("{} ({}): {}", SocialSecurityNumber::SSNFormat(&this->person), this->relationType->Debug(), this->strength);
 }
