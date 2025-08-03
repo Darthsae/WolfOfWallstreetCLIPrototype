@@ -24,8 +24,26 @@ namespace WolfOfWallstreet::Game {
     public:
         Name name;
         social_security_number socialSecurityNumber;
+        int64_t money;
         Date dateOfBirth;
         std::vector<Relationship> relations;
+        uint8_t sex;
+        uint8_t gender;
+        uint8_t sexualOrientation;
     };
 }
+
+/*
+
+Physical Health
+Mental Health
+Reputation
+Assets
+Criminal Record
+Education
+Notable Achievements
+Personality
+
+*/
+
 #endif

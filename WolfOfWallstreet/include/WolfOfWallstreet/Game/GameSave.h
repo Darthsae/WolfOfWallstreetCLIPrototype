@@ -7,6 +7,7 @@ namespace WolfOfWallstreet::Game {
 }
 
 #include <WolfOfWallstreet/Game/World.h>
+#include <WolfOfWallstreet/Game/Data/SocialSecurityNumber.h>
 #include <string>
 
 namespace WolfOfWallstreet::Game {
@@ -14,6 +15,7 @@ namespace WolfOfWallstreet::Game {
     public:
         GameSaveProfile profile;
         World world;
+        Data::social_security_number player;
     };
 
     struct GameSaveProfile {
