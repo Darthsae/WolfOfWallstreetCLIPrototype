@@ -46,6 +46,14 @@ jobs:
         with:
           submodules: true
 
+      - name: Install specific GCC version
+        if: matrix.os == 'ubuntu-24.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-14 g++-14 # Install GCC and G++ version 14
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100 # Set as default
+          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
+
       - uses: lukka/get-cmake@latest
 
       - name: Restore from cache and setup vcpkg executable and data files.
@@ -62,5 +70,5 @@ jobs:
       - name: Run CMake+vcpkg+Ninja+CTest to build packages and generate/build/test the code.
         uses: lukka/run-cmake@v10
         with:
-          configurePreset: 'x64'
-          buildPreset: 'x64-release'
+          configurePreset: 'general'
+          buildPreset: 'general-release'
